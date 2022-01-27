@@ -11,19 +11,37 @@
     
 </head>
 <body>
-    
-    <h2>Gestão de Tarefas</h2>
-    
-    <form id="form-create-task">
-        <input type="text" placeholder="Digite sua nova tarefa!" id="new_task">
-        <button>Cadastrar</button>
-    </form>
-    
-    <div id="list-of-tasks">
-        <ul></ul>
-    </div>
+    <main>
+        <div class="container">            
+            <div class="content">
+
+                <div class="welcome">
+                    <img src="img/file-text-dynamic-premium.png" alt="file text icon">
+                </div>
+                
+                <form id="form-create-task">
+                    
+                    <div class="input-group">
+                        <label for="new_task">Digite sua nova tarefa!</label>
+                        <input type="text" placeholder="Minha tarefa" id="new_task">
+                    </div>
+                    <button type="submit">Cadastrar</button>
+                </form>
+                
+                <div id="list-of-tasks">
+                    <span>Sua lista de tarefas</span>
+                    <ul></ul>
+                </div>
+
+
+                <span id="remove-all-tasks" onclick="removeAllTasks()">Remover todas as tarefas</span>
+            </div>
+        </div>
+    </main>
 
     <!-- JS -->
     <script src="index.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
 </body>
 </html>

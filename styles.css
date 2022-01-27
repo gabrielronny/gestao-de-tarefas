@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #212528;
+    --secundary-black: #2b2f33;
+    --gray-color: #7a7c80;
+    --red-color: #fe423d;
+    --complted-color: #262b2e;
+}
+
+body, 
+button, 
+input {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: var(--background-color);
+    overflow-x: hidden;
+}
+
+
+div.container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container div.content {
+    width: 80vw;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    margin-bottom: 30px;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gray-color);
+}
+
+div.content div.welcome img {
+    width: 120px;
+}
+
+div.content form#form-create-task {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div.content form#form-create-task div.input-group {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+div.content form#form-create-task div.input-group input {
+    width: 450px;
+    height: 45px;
+
+    border: none;
+
+    background: var(--secundary-black);
+    border-radius: 5px;
+    padding-left: 10px;
+    color: white;
+}
+
+div.content form#form-create-task div.input-group input:focus {
+    outline: none !important;
+    border: 1px solid var(--red-color);
+}
+
+div.content form#form-create-task div.input-group label {
+    font-size: 0.9rem;
+}
+
+
+div.content form#form-create-task button {
+    width: 450px;
+    height: 45px;
+    margin-top: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: var(--red-color);
+}
+
+
+/* div.content div#list-of-tasks {
+    width: 100%;
+} */
+
+div.content div#list-of-tasks {
+    padding-top: 15px;
+    text-align: center;
+}
+
+div.content div#list-of-tasks ul {
+    /* text-align: left; */
+    list-style: none;
+    margin-top: 15px;
+}
+
+div.content div#list-of-tasks ul li {
+    position: relative;
+    display: flex;
+    width: 450px;
+    min-height: 70px;
+    height: auto;
+
+    padding: 25px 25px;
+    background: var(--secundary-black);
+    border-radius: 5px;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+div.content div#list-of-tasks ul li:first-child { margin-top: 0; }
+
+div.content div#list-of-tasks ul li.completed span{
+    text-decoration: line-through;
+    /* background: red; */
+}
+
+div.content div#list-of-tasks ul li.completed div.description div.circle {
+    background: var(--complted-color);
+}
+
+
+div.content div#list-of-tasks ul li div.description {
+    display: flex;
+    gap: 1rem;
+}
+
+div.content div#list-of-tasks ul li div.description div.circle {
+    width: 25px;
+    height: 25px;
+    background: var(--red-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+div.content span#remove-all-tasks {
+    cursor: pointer;
+}
