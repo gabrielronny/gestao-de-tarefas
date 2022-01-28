@@ -37,14 +37,15 @@ function listTasks() {
         divListOfTasks.innerHTML = 'você não tem tarefas, que tal criar?';
 
         document.querySelector('#remove-all-tasks').style.display = 'none';
+        document.querySelector('#list-of-tasks span').style.display = 'none';
     } else {
         document.querySelector('#remove-all-tasks').style.display = 'block';
+        document.querySelector('#list-of-tasks span').style.display = 'block';
+     
         divListOfTasks.innerHTML = '';
-
 
         listOfTasks = [];
         let count = 1;
-        let statusTask;
 
         tasksInLocalStorage.map((task) => {
 
