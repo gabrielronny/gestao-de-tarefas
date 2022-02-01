@@ -13,6 +13,7 @@
     --gray-color: #7a7c80;
     --red-color: #fe423d;
     --complted-color: #262b2e;
+    --green-color: #41fa78de;
 }
 
 body, 
@@ -34,6 +35,7 @@ div.container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 0 30px 0;
 }
 
 div.container div.content {
@@ -43,7 +45,6 @@ div.container div.content {
     display: flex;
     flex-direction: column;
     padding-top: 25px;
-    margin-bottom: 30px;
     align-items: center;
     gap: 1rem;
     color: var(--gray-color);
@@ -155,6 +156,20 @@ div.content div#list-of-tasks ul li div.description {
     gap: 1rem;
 }
 
+div.content div#list-of-tasks ul li div.actions {
+    display: flex;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+div.content div#list-of-tasks ul li div.actions box-icon {
+    cursor: pointer;
+}
+
 div.content div#list-of-tasks ul li div.description div.circle {
     width: 25px;
     height: 25px;
@@ -165,7 +180,21 @@ div.content div#list-of-tasks ul li div.description div.circle {
     align-content: center;
 }
 
-
 div.content span#remove-all-tasks {
     cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: var(--secundary-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--red-color);
+    border-radius: 8px;
 }

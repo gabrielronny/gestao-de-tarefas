@@ -1,4 +1,3 @@
-
 let listOfTasks = [];
 
 /*
@@ -54,13 +53,16 @@ function listTasks() {
             );
 
             divListOfTasks.innerHTML += `
-               
                 <li class="${task.status === 0 ? 'completed': ''}">
                     <div class="description">
                         <div class="circle">${count}</div>
                         <span>${task.name}</span>
                     </div>
-                    <input type="checkbox" onclick='deleteTask(${task.id})' ${task.status === 0 ? 'checked': ''}>
+                    <div class="actions">
+                        <!-- <input type="checkbox" > -->
+                        <box-icon name="check" color="${task.status === 0 ? "#41fa7869": "#41fa78"}" onclick="${task.status === 0 ? " " : `completeTask(${task.id})`}"></box-icon>
+                        <box-icon name="x" color="red" onclick="removeTask(${task.id})"></box-icon>
+                    </div>
                 </li>
             ` ;
 
@@ -77,10 +79,10 @@ function listTasks() {
     1 -> Em progresso
 */
 
-function deleteTask(id) {
+function completeTask(id) {
 
-    let responseDeleteTask = confirm('Você deseja concluir essa tarefa?');
-    if (responseDeleteTask) {
+    let responseCompleteTask = confirm('Você deseja concluir essa tarefa?');
+    if (responseCompleteTask) {
         
         let newListOfTasks = listOfTasks.map((task) => {
             if(task.id === id && task.status === 1) {
@@ -100,11 +102,33 @@ function deleteTask(id) {
     }
 }
 
+
+function removeTask(id) {
+
+    let responseRemoveTask = confirm('Você deseja remover essa tarefa?');
+
+    if(responseRemoveTask) {
+
+        let newListOfTasks = listOfTasks.filter((task) => {
+            return task.id !==  id;
+        });
+
+        listOfTasks = [];
+        
+        newListOfTasks.forEach(task => {
+            listOfTasks.push(task);
+        })
+
+        saveTasksInLocalStorage();
+        listTasks();
+    }
+}
+
 function removeAllTasks() {
 
     let responseRemoveAllTasks = confirm('Você deseja remover todas as tarefas?');
 
-    if(removeAllTasks) {
+    if(responseRemoveAllTasks) {
         listOfTasks = [];
         saveTasksInLocalStorage();
         listTasks();
