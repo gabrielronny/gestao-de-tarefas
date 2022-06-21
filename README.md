@@ -1,4 +1,4 @@
-<h2 align="center">📝 Gestão de Tarefas</h2>
+<h1 align="center">📝 Gestão de Tarefas</h1>
 
 > Gestão de Tarefas foi desenvolvido para organizar as nossas tarefas do dia a dia.
 
