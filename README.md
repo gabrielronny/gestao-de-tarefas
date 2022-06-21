@@ -8,6 +8,7 @@
 
 - [x] Atualizar e Remover uma determinada tarefa
 - [x] Cadastrar uma nova tarefa
+- [x] Concluir uma determinada tarefa
 - [x] Remover todas as tarefas
 
 ### :wrench: Tecnologias utilizadas
